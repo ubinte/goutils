@@ -6,15 +6,19 @@ import (
 )
 
 func TestNewAuth(t *testing.T) {
-	auth := NewTokenAuth()
-	t.Log(auth.TokenExpireIn)
-	TokenExpireIn = 10 * time.Minute
-	t.Log(auth.TokenExpireIn)
+	tokenAuth := NewTokenAuth()
+	TokenExpireIn = 1 * time.Second
+
+	if tokenAuth.TokenExpireIn == TokenExpireIn {
+		t.Fatal("tokenAuth.TokenExpireIn should be the same")
+	}
 }
 
 func TestDefault(t *testing.T) {
 	auth := defaultAuth
-	t.Log(auth.TokenExpireIn)
-	TokenExpireIn = 30 * time.Minute
-	t.Log(auth.TokenExpireIn)
+	TokenExpireIn = 1 * time.Second
+
+	if tokenAuth.TokenExpireIn != TokenExpireIn {
+		t.Fatal("defaultAuth.TokenExpireIn should be changed")
+	}
 }
