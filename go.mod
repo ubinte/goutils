@@ -1,4 +1,4 @@
-module goutils
+module github.com/ubinte/goutils
 
 go 1.14
 
