@@ -4,9 +4,8 @@ import (
 	"net/http"
 	"time"
 
-	"goutils/strutils"
-
 	"github.com/dgrijalva/jwt-go"
+	"github.com/ubinte/goutils/strutils"
 )
 
 var (
